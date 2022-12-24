@@ -23,7 +23,28 @@ npm install vue-quarter-picker --save
 
 ### 注册指令
 
+<!-- 注册必要组件 -->
 ```js
+import {
+  Icon,
+  Input,
+  Button,
+  Popover
+} from 'ant-design-vue'
+
+const install = function (Vue) {
+  Vue.component(Icon.name, Icon)
+  Vue.component(Popover.name, Popover)
+  Vue.component(Input.name, Input)
+  Vue.component(Button.name, Button)
+}
+
+export default install
+
+```
+
+```js
+import 'vue-quarter-picker/es/styles/style.css'
 import { QuarterSelect } from 'vue-quarter-picker'
 export default {
     components: {
