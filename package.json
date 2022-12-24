@@ -1,0 +1,46 @@
+{
+  "name": "vue-quarter-picker",
+  "version": "1.0.0",
+  "description": "一款基于`Vue2.+`+`Ant Design`的季度选择组件",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "scripts": {
+    "build": "vite build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "files": [
+    "es",
+    "lib",
+    "package.json",
+    "README.md"
+  ],
+  "exports": {
+    ".": {
+      "import": "./lib/index.js",
+      "require": "./es/index.js"
+    }
+  },
+  "types": "lib/index.d.ts",
+  "keywords": [
+    "季度组件选择器",
+    "vue",
+    "vue2",
+    "Ant Design"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kfhechenglong/vue-quarter-picker.git"
+  },
+  "homepage": "https://github.com/kfhechenglong/Hola/tree/main/packages/vue-quarter-picker#readme",
+  "author": "绝对零度",
+  "license": "MIT",
+  "dependencies": {
+    "sass": "^1.57.1",
+    "vite": "^4.0.3",
+    "vite-plugin-dts": "^1.7.1",
+    "vue": "^2.7.14"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue2": "^2.2.0"
+  }
+}

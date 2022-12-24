@@ -1,0 +1,84 @@
+.quarter-input .clear-icon {
+  display: none;
+}
+
+.has-quarter-value.quarter-input:hover .clear-icon {
+  display: block;
+  color: rgba(0, 0, 0, 0.25);
+  background-color: #fff;
+}
+.has-quarter-value.quarter-input:hover .clear-icon:hover {
+  color: #666666;
+}
+.has-quarter-value.quarter-input:hover .time-icon {
+  display: none;
+}
+
+.quarterPickerBox {
+  width: 250px;
+}
+.quarterPickerBox .quarterLabel {
+  color: #333;
+  float: left;
+  border-radius: 4px;
+  width: calc(50% - 10px);
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 10px;
+}
+.quarterPickerBox .quarterLabel:hover {
+  color: white;
+  background-color: #2FC6A3;
+}
+.quarterPickerBox .quarterLabel[disabled] {
+  color: rgba(0, 0, 0, 0.25);
+  background-color: transparent;
+  border-color: transparent;
+  text-shadow: none;
+  box-shadow: none;
+}
+.quarterPickerBox .quarterLabel[disabled]:hover {
+  color: rgba(0, 0, 0, 0.25);
+  background-color: transparent;
+  border-color: transparent;
+  text-shadow: none;
+  box-shadow: none;
+}
+.quarterPickerBox .quarterActive {
+  color: white;
+  background-color: #2FC6A3;
+}
+.quarterPickerBox .ant-popover-inner-content {
+  overflow: hidden;
+  padding: 0;
+}
+.quarterPickerBox .content-year {
+  padding: 10px;
+  border-bottom: 1px solid #ebedf0;
+  margin-bottom: 5px;
+  display: flex;
+}
+.quarterPickerBox .content-year i {
+  flex: 1;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  user-select: none;
+  display: block;
+}
+.quarterPickerBox .content-year span {
+  cursor: pointer;
+}
+.quarterPickerBox .content-year span:hover {
+  color: #2FC6A3;
+}
+.quarterPickerBox .content-year .disable {
+  cursor: not-allowed;
+  color: rgba(0, 0, 0, 0.25);
+}
+.quarterPickerBox .content-year .disable:hover {
+  color: rgba(0, 0, 0, 0.25);
+}
+.quarterPickerBox .quarterBtns {
+  padding: 0 10px;
+}
