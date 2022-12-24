@@ -1,5 +1,5 @@
 const quarterProps = {
-  effectDate: {
+  value: {
     type: String,
     default: ""
   },

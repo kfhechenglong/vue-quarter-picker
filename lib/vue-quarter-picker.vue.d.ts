@@ -24,6 +24,10 @@ declare namespace _sfc_main {
         function quarterRenderOptions(): any;
         function quarterRenderOptions(): any;
     }
+    export namespace model {
+        const prop: string;
+        const event: string;
+    }
     export namespace watch {
         function visible(): void;
         function visible(): void;
@@ -33,8 +37,8 @@ declare namespace _sfc_main {
         function reduceYear(): void;
         function addYear(): void;
         function addYear(): void;
-        function quarterModal(effectDate: any): void;
-        function quarterModal(effectDate: any): void;
+        function quarterModal(): void;
+        function quarterModal(): void;
         function clearInputValue(): void;
         function clearInputValue(): void;
         function handleQuarter(item: any): void;

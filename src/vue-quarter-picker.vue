@@ -29,7 +29,7 @@
       readOnly
       placeholder="请选择季度生效日期"
       v-model.trim="quarterDate"
-      @click="quarterModal(effectDate)"
+      @click="quarterModal"
       :class="{'has-quarter-value': quarterDate, 'quarter-input': true}"
       :style="{'width': inputWidth + 'px'}"
     >
@@ -106,6 +106,10 @@
         })
       }
     },
+    model: {
+      prop: 'value',
+      event: 'change'
+    },
     watch: {
       visible () {
         if (!this.visible) {
@@ -127,9 +131,9 @@
         // 增加年份
         this.selectedYear++
       },
-      quarterModal (effectDate) {
-        if (effectDate) {
-          const dateArray = effectDate.split('-') // 时间集合
+      quarterModal () {
+        if (this.value) {
+          const dateArray = this.value.split('-') // 时间集合
           const monthVal = dateArray[1][0] === '0' ? Number(dateArray[1][1]) : Number(dateArray[1]) // 获取到月份
           const quarterIdx = this.quarterOptions.findIndex(item => item.months.includes(monthVal))
           this.selectedYear = Number(dateArray[0])
@@ -145,14 +149,16 @@
       // 清空内容
       clearInputValue () {
         this.quarterDate = ''
-        this.$emit('quarterOK', '')
+        this.$emit('selected', '')
+        this.$emit('change', '')
       },
       // 选择季度
       handleQuarter (item) {
         const selectMonth = item.months[0].length > 1 ? item.months[0] : '0' + item.months[0]
         this.quarterDate = this.selectedYear + '-' + item.key
         this.visible = false
-        this.$emit('quarterOK', this.selectedYear + '-' + selectMonth)
+        this.$emit('change', this.selectedYear + '-' + selectMonth)
+        this.$emit('selected', this.selectedYear + '-' + selectMonth)
       }
     }
     // components: {

@@ -61,6 +61,10 @@ const _sfc_main = {
       });
     }
   },
+  model: {
+    prop: "value",
+    event: "change"
+  },
   watch: {
     visible() {
       if (!this.visible) {
@@ -79,9 +83,9 @@ const _sfc_main = {
     addYear() {
       this.selectedYear++;
     },
-    quarterModal(effectDate) {
-      if (effectDate) {
-        const dateArray = effectDate.split("-");
+    quarterModal() {
+      if (this.value) {
+        const dateArray = this.value.split("-");
         const monthVal = dateArray[1][0] === "0" ? Number(dateArray[1][1]) : Number(dateArray[1]);
         const quarterIdx = this.quarterOptions.findIndex((item) => item.months.includes(monthVal));
         this.selectedYear = Number(dateArray[0]);
@@ -94,13 +98,15 @@ const _sfc_main = {
     },
     clearInputValue() {
       this.quarterDate = "";
-      this.$emit("quarterOK", "");
+      this.$emit("selected", "");
+      this.$emit("change", "");
     },
     handleQuarter(item) {
       const selectMonth = item.months[0].length > 1 ? item.months[0] : "0" + item.months[0];
       this.quarterDate = this.selectedYear + "-" + item.key;
       this.visible = false;
-      this.$emit("quarterOK", this.selectedYear + "-" + selectMonth);
+      this.$emit("change", this.selectedYear + "-" + selectMonth);
+      this.$emit("selected", this.selectedYear + "-" + selectMonth);
     }
   }
 };
@@ -115,9 +121,7 @@ var _sfc_render = function render() {
     }], attrs: { "type": "link", "disabled": item.disabled }, on: { "click": function($event) {
       return _vm.handleQuarter(item);
     } } }, [_vm._v(" " + _vm._s(item.label) + " ")]);
-  }), 1)]), _c("a-input", { class: { "has-quarter-value": _vm.quarterDate, "quarter-input": true }, style: { "width": _vm.inputWidth + "px" }, attrs: { "readOnly": "", "placeholder": "请选择季度生效日期" }, on: { "click": function($event) {
-    return _vm.quarterModal(_vm.effectDate);
-  } }, model: { value: _vm.quarterDate, callback: function($$v) {
+  }), 1)]), _c("a-input", { class: { "has-quarter-value": _vm.quarterDate, "quarter-input": true }, style: { "width": _vm.inputWidth + "px" }, attrs: { "readOnly": "", "placeholder": "请选择季度生效日期" }, on: { "click": _vm.quarterModal }, model: { value: _vm.quarterDate, callback: function($$v) {
     _vm.quarterDate = typeof $$v === "string" ? $$v.trim() : $$v;
   }, expression: "quarterDate" } }, [_c("a-icon", { staticClass: "clear-icon", attrs: { "slot": "suffix", "type": "close-circle" }, on: { "click": function($event) {
     $event.stopPropagation();

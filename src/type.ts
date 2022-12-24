@@ -1,8 +1,8 @@
-// import {ExtractPropTypes} from "vue";
+import {ExtractPropTypes} from "vue";
 // 定义按钮类型
 export const quarterProps = {
     // 生效时间
-    effectDate: {
+    value: {
         type: String,
         default: ''
     },
@@ -31,4 +31,4 @@ export const quarterProps = {
     }
 };
 
-// export type QuarterProps = ExtractPropTypes<typeof quarterProps>
+export type QuarterProps = ExtractPropTypes<typeof quarterProps>

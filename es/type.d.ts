@@ -1,5 +1,6 @@
+import { ExtractPropTypes } from "vue";
 export declare const quarterProps: {
-    effectDate: {
+    value: {
         type: StringConstructor;
         default: string;
     };
@@ -20,3 +21,4 @@ export declare const quarterProps: {
         default: boolean;
     };
 };
+export declare type QuarterProps = ExtractPropTypes<typeof quarterProps>;
