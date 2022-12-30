@@ -31,6 +31,8 @@ declare namespace _sfc_main {
     export namespace watch {
         function visible(): void;
         function visible(): void;
+        function value(): void;
+        function value(): void;
     }
     export namespace methods {
         function reduceYear(): void;

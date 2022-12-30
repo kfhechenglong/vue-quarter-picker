@@ -72,6 +72,11 @@ const _sfc_main = {
           this.selectedYear = new Date().getFullYear();
         });
       }
+    },
+    value() {
+      if (this.value) {
+        this.quarterModal();
+      }
     }
   },
   methods: {
